@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CommentBoxComponent } from './components/comment-box/comment-box.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BillDataService } from './bill-data.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [BillDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
