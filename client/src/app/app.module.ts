@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { MaterialModule } from '@angular/material';
 import { HeaderComponent } from './components/header/header.component';
 import { CommentBoxComponent } from './components/comment-box/comment-box.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -10,6 +11,7 @@ import { BillListComponent } from './components/bill-list/bill-list.component';
 import { AboutComponent } from './components/about/about.component';
 import { BillsComponent } from './components/bills/bills.component';
 import {RouterModule,Routes} from '@angular/router';
+import { BillDataService } from './bill-data.service';
 const appRoutes:Routes=[
   {path:'',component:AppComponent},
   {path:'about',component:AboutComponent},
@@ -17,10 +19,12 @@ const appRoutes:Routes=[
 
 ];
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
+    FooterComponent,    
     HeaderComponent,
     CommentBoxComponent,
     MenuComponent,
@@ -28,11 +32,12 @@ const appRoutes:Routes=[
     AboutComponent,
     BillsComponent
     ],
+
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [BillDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
