@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+//import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import { MaterialModule } from '@angular/material';
 import { HeaderComponent } from './components/header/header.component';
 import { CommentBoxComponent } from './components/comment-box/comment-box.component';
@@ -17,7 +17,7 @@ import { BillDataService } from './bill-data.service';
 const appRoutes:Routes=[
   {path:'',component:AppComponent},
   {path:'about',component:AboutComponent},
-  {path:'user-component',component:BillsComponent}
+  {path:'bills',component:BillsComponent}
 
 ];
 
