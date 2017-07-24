@@ -6,4 +6,8 @@
 </ul>
   <button routerLink="about">About</button>
   <router-outlet></router-outlet> 
-<app-bill-list></app-bill-list>
+  
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>

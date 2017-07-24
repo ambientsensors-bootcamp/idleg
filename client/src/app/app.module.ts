@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import { MaterialModule } from '@angular/material';
 import { HeaderComponent } from './components/header/header.component';
 import { CommentBoxComponent } from './components/comment-box/comment-box.component';
@@ -12,6 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 import { BillsComponent } from './components/bills/bills.component';
 import {RouterModule,Routes} from '@angular/router';
 import { BillDataService } from './bill-data.service';
+
 const appRoutes:Routes=[
   {path:'',component:AppComponent},
   {path:'about',component:AboutComponent},
@@ -35,7 +37,9 @@ const appRoutes:Routes=[
 
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MaterialModule
+    
   ],
   providers: [BillDataService],
   bootstrap: [AppComponent]
