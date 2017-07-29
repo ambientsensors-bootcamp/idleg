@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BillDataService } from './bill-data.service';
+import { BillDataService } from './services/bill-data.service';
 
 @Component({
   selector: 'app-root',
