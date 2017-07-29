@@ -11,8 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BillListComponent } from './components/bill-list/bill-list.component';
 import { AboutComponent } from './components/about/about.component';
 import { BillsComponent } from './components/bills/bills.component';
-import {RouterModule,Routes} from '@angular/router';
-import { BillDataService } from './bill-data.service';
+import { RouterModule, Routes } from '@angular/router';
+import { BillDataService } from './services/bill-data.service';
 
 const appRoutes:Routes=[
   {path:'',component:AppComponent},
