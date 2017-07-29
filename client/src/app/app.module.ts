@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 //import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import { MaterialModule } from '@angular/material';
+
 import { HeaderComponent } from './components/header/header.component';
 import { CommentBoxComponent } from './components/comment-box/comment-box.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -22,7 +24,6 @@ const appRoutes:Routes=[
 ];
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
     
   ],
   providers: [BillDataService],
