@@ -9,7 +9,7 @@
 /node_modules
 
 #configs
-/src/assets/config.json
+/src/assets/config.ts
 
 # IDEs and editors
 /.idea

@@ -1,4 +1,1 @@
-export class Config {
- public SUNLIGHT_KEY = 'b86ea60a-aa79-4ccf-8a5f-82fe1b198c0c'
-}
-
+export var SUNLIGHT_KEY:string = 'b86ea60a-aa79-4ccf-8a5f-82fe1b198c0c';

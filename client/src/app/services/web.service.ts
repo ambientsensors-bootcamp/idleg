@@ -3,7 +3,9 @@ import { Http, Response } from '@angular/http';
 import { Observable, Subject } from 'rxjs/Rx';
 import * as _ from 'lodash';
 //npm install --save lodash
-import Config from '../../assets/config';
+import { SUNLIGHT_KEY } from '../../assets/config';
+
+console.log(SUNLIGHT_KEY);
 
 @Injectable()
 export class WebService {
