@@ -14,7 +14,8 @@ import { BillListComponent } from './components/bill-list/bill-list.component';
 import { AboutComponent } from './components/about/about.component';
 import { BillsComponent } from './components/bills/bills.component';
 import { RouterModule, Routes } from '@angular/router';
-import { BillDataService } from './services/bill-data.service';
+import { WebService } from './services/web.service';
+import { ImportantConfig } from '../assets/config';
 
 const appRoutes:Routes=[
   {path:'',component:AppComponent},
@@ -43,7 +44,7 @@ const appRoutes:Routes=[
     BrowserAnimationsModule
     
   ],
-  providers: [BillDataService],
+  providers: [WebService,ImportantConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

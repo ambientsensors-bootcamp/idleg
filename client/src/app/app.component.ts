@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BillDataService } from './services/bill-data.service';
+//import { BillDataService } from './services/bill-data.service';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +10,13 @@ import { BillDataService } from './services/bill-data.service';
 export class AppComponent {
   title = 'Idleg';
 
-  constructor(private dataService:BillDataService) {
+  constructor() {
 
   }
 
   someProperty:string = '';
 
   ngOnInit() {
-    console.log(this.dataService.billList);
-
-    this.someProperty = this.dataService.billData(); 
+  
   }
 }
