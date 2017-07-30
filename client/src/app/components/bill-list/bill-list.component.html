@@ -10,13 +10,13 @@
 <div *ngFor="let bill of bills">
 <md-card class="example-card">
   <md-card-header>
-    <md-card-title>Bill Number: {{bill.Id}}</md-card-title>
-    <md-card-subtitle>Bill Description</md-card-subtitle> 
+    <md-card-title>Bill Number: {{bill.bill_id}}</md-card-title>
+    <md-card-subtitle>Subtitle</md-card-subtitle> 
   </md-card-header>
   <!-- <img md-card-image src="assets/img/examples/shiba2.jpg"> -->
   <md-card-content>
     <p>
-     {{bill.body}}
+     Bill Description: {{bill.title}}
     </p>
   </md-card-content>
   <md-card-actions>
