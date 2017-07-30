@@ -3,13 +3,8 @@ import { Http, Response } from '@angular/http';
 import { Observable, Subject } from 'rxjs/Rx';
 import * as _ from 'lodash';
 //npm install --save lodash
-<<<<<<< HEAD
-import { SUNLIGHT_KEY } from '../../assets/config';
 
-console.log(SUNLIGHT_KEY);
-=======
 import { ImportantConfig } from '../../assets/config';
->>>>>>> 2318d656a151976555fa383641db382e8ce00c94
 
 @Injectable()
 export class WebService {
@@ -23,7 +18,7 @@ constructor(private http: Http, private config: ImportantConfig) {}
 
     public getResource(resource: string): Observable<any> {
         console.log("Important API KEY is: " + this.config.API_KEY);
-        let fullPath = this.baseURL + resource+ "/?apikey="+this.config.API_KEY;
+        let fullPath = this.baseURL + resource + "/?apikey=" + this.config.API_KEY + "&state=id&search_window=session&q=tax";
         console.log("GET request to full path: " + fullPath);
         const response = this.http.get(fullPath);
         return this.getResponseBody(response);

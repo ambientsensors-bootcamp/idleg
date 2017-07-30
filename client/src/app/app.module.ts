@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 //import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import { MaterialModule } from '@angular/material';
-
+import { HttpModule } from '@angular/http';
 import { HeaderComponent } from './components/header/header.component';
 import { CommentBoxComponent } from './components/comment-box/comment-box.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -41,7 +41,8 @@ const appRoutes:Routes=[
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule
     
   ],
   providers: [WebService,ImportantConfig],
