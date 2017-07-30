@@ -3,18 +3,21 @@ import { Http, Response } from '@angular/http';
 import { Observable, Subject } from 'rxjs/Rx';
 import * as _ from 'lodash';
 //npm install --save lodash
-import Config from '../../assets/config';
+import { ImportantConfig } from '../../assets/config';
 
 @Injectable()
 export class WebService {
     private errorsSubject = new Subject<any>();
-    public baseURL: string = "https://openstates.org/api/v1/bills/?apikey=" + SUNLIGHT_KEY
+    //public baseURL: string = "https://openstates.org/api/v1/bills/?apikey=" 
+    public baseURL: string = "https://openstates.org/api/v1/" 
+    
+constructor(private http: Http, private config: ImportantConfig) {}
 
-    constructor(private http: Http) {
-    }
+
 
     public getResource(resource: string): Observable<any> {
-        let fullPath = this.baseURL + resource;
+        console.log("Important API KEY is: " + this.config.API_KEY);
+        let fullPath = this.baseURL + resource+ "/?apikey="+this.config.API_KEY;
         console.log("GET request to full path: " + fullPath);
         const response = this.http.get(fullPath);
         return this.getResponseBody(response);
@@ -45,10 +48,4 @@ export class WebService {
         let message = `Received ${err.status} from the server`;
         return Observable.throw({ message: message, status });
     }
-
-
-  billData() {
-    return 'This is my data, man (view console...)!';
-  }
-
 }
