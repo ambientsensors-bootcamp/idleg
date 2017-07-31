@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 //import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import { MaterialModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
+import {FormsModule} from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { CommentBoxComponent } from './components/comment-box/comment-box.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -16,6 +17,8 @@ import { BillsComponent } from './components/bills/bills.component';
 import { RouterModule, Routes } from '@angular/router';
 import { WebService } from './services/web.service';
 import { ImportantConfig } from '../assets/config';
+import { FilterComponent } from './components/filter/filter.component';
+import  './common/filter-interface'
 
 const appRoutes:Routes=[
   {path:'',component:AppComponent},
@@ -34,7 +37,8 @@ const appRoutes:Routes=[
     MenuComponent,
     BillListComponent,
     AboutComponent,
-    BillsComponent
+    BillsComponent,
+    FilterComponent
     ],
 
   imports: [
@@ -42,7 +46,8 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes),
     MaterialModule,
     BrowserAnimationsModule,
-    HttpModule
+    HttpModule,
+    FormsModule
     
   ],
   providers: [WebService,ImportantConfig],

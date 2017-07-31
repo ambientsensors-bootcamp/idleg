@@ -1,0 +1,12 @@
+<p>
+  filter works!
+  {{filter1.topic}}
+</p>
+<div>
+  <form (ngSubmit)="onSubmit()">
+            <label for="topic">Topic : </label>
+            <input type="text" [(ngModel)]="filter1.topic" name=topic>
+            <button type="submit" class="btn btn-success">Submit</button>
+          
+    </form>
+   </div>
