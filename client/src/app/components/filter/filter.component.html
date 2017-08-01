@@ -5,7 +5,13 @@
 <div>
  
             <label for="topic">Topic : </label>
-            <input type="text" [(ngModel)]="filter1.topic" name=topic>
+            <input type="text" [(ngModel)]="filter1.subject" name=subject><br>
+            <label for="topic">State : </label>
+            <input type="text" [(ngModel)]="filter1.state" name=state><br>
+            <label for="topic">Chamber : </label>
+            <input type="text" [(ngModel)]="filter1.chamber" name=chamber><br>
+            <label for="topic">Type : </label>
+            <input type="text" [(ngModel)]="filter1.type" name=type><br>
             <button (click)="sendFilter()" class="btn btn-success">Filter </button>
           
    </div>

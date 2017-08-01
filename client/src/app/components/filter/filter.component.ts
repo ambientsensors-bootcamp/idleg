@@ -19,17 +19,18 @@ notify: EventEmitter<string> = new EventEmitter<string>();
     
   ) { 
    this.filter1={
-topic:'50 state',
+subject:'50 state',
 chamber:'boston',
-state:'ma'
+state:'ma',
+type:'gh'
 }
   
   }
   
   sendFilter(){
-    console.log(this.filter1.topic)
+    console.log(this.filter1.subject)
      //this.notify.emit(parseInt(this.num1) + parseInt());
-     this.notify.emit(this.filter1.topic);
+     this.notify.emit(this.filter1.subject);
   }
 
   ngOnInit() {

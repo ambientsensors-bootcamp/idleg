@@ -1,8 +1,8 @@
  interface filter {
 
-    topic:string,
+    subject:string,
     chamber:string,
     state:string,
-
+    type:string
       
 }

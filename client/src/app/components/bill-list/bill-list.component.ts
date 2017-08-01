@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebService } from '../../services/web.service';
-import { FilterComponent } from '../filter/filter.component';
+//import { FilterComponent } from '../filter/filter.component';
 
 @Component({
   selector: 'app-bill-list',
@@ -11,7 +11,7 @@ export class BillListComponent implements OnInit {
   
   bills:Bill[];
   isFilter:boolean=false;
-  fc:FilterComponent;
+  
   /* submitted = false;
   onSu bmit() { this.submitted = true; }*/
 
@@ -20,6 +20,7 @@ export class BillListComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.ws.getResource("bills/?state=id&search_window=session&q=tax").subscribe(data => {
       this.bills = data;
       console.log("data", this.bills); 
@@ -37,8 +38,8 @@ export class BillListComponent implements OnInit {
     this.isFilter=! this.isFilter ;
    }
 
-   filterBillsList(filter:string){
-  console.log(filter)
+   filterBillsList(filterStr:string){
+  console.log(filterStr)
 }
   
   }
