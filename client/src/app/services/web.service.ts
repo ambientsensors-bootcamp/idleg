@@ -18,7 +18,7 @@ constructor(private http: Http, private config: ImportantConfig) {}
 
     public getResource(resource: string): Observable<any> {
         console.log("Important API KEY is: " + this.config.API_KEY);
-        let fullPath = this.baseURL + resource + "/?apikey=" + this.config.API_KEY + "&state=id&search_window=session&q=tax";
+        let fullPath = this.baseURL + resource + "&apikey=" + this.config.API_KEY ;
         console.log("GET request to full path: " + fullPath);
         const response = this.http.get(fullPath);
         return this.getResponseBody(response);

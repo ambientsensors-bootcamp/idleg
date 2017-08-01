@@ -20,7 +20,7 @@ export class BillListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ws.getResource("bills").subscribe(data => {
+    this.ws.getResource("bills/?state=id&search_window=session&q=tax").subscribe(data => {
       this.bills = data;
       console.log("data", this.bills); 
 

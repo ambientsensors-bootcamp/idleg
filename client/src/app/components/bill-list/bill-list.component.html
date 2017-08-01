@@ -8,9 +8,8 @@
 <div *ngIf="isFilter"> 
 <app-filter #flt></app-filter> 
 </div>
-<p  (notify)="filterBillsList($event)">
-hellooo
-</p>
+<div  (notify)="filterBillsList($event)">
+
 
 <div *ngFor="let bill of bills">
 <md-card class="example-card">
@@ -37,4 +36,5 @@ hellooo
   </md-card-actions> 
 </md-card>
  
+</div>
 </div>
