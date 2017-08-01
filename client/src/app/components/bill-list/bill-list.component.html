@@ -6,9 +6,12 @@
 </div> -->   
 <button (click)="toggleFilter()" class="btn btn-success">Filter Bills</button>
 <div *ngIf="isFilter"> 
-<app-filter></app-filter> 
+<app-filter #flt></app-filter> 
 </div>
-  
+<p  (notify)="filterBillsList($event)">
+hellooo
+</p>
+
 <div *ngFor="let bill of bills">
 <md-card class="example-card">
   <md-card-header>

@@ -20,6 +20,8 @@ import { ImportantConfig } from '../assets/config';
 import { FilterComponent } from './components/filter/filter.component';
 import  './common/filter-interface'
 
+
+
 const appRoutes:Routes=[
   {path:'',component:AppComponent},
   {path:'about',component:AboutComponent},
