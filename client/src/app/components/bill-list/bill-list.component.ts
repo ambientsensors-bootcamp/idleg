@@ -21,7 +21,7 @@ export class BillListComponent implements OnInit {
 
   ngOnInit() {
     
-    this.ws.getResource("bills/?state=id&search_window=session&q=tax").subscribe(data => {
+    this.ws.getResource("bills/?state=id&search_window=session&page=1&per_page=20").subscribe(data => {
       this.bills = data;
       console.log("data", this.bills); 
 
@@ -38,7 +38,7 @@ export class BillListComponent implements OnInit {
     this.isFilter=! this.isFilter ;
    }
 
-   filterBillsList(filterStr:string){
+   filterBillsList(filterStr){
   console.log(filterStr)
 }
   

@@ -1,6 +1,6 @@
 <p>
   filter works!
-  {{filter1.topic}}
+  {{filter1.subject}}
 </p>
 <div>
  
@@ -10,6 +10,14 @@
             <input type="text" [(ngModel)]="filter1.state" name=state><br>
             <label for="topic">Chamber : </label>
             <input type="text" [(ngModel)]="filter1.chamber" name=chamber><br>
+            <div *ngFor="let chamber of chambers ; let i=index">
+            <input type="radio" name="chambergroup" 
+            [checked]="idx === 0" 
+            [value]="chamber" 
+            [id]="chamber"
+            (change)="onSelectionChangechamber(chamber)">
+            {{chambers[i]}}
+            </div>
             <label for="topic">Type : </label>
             <input type="text" [(ngModel)]="filter1.type" name=type><br>
             <button (click)="sendFilter()" class="btn btn-success">Filter </button>

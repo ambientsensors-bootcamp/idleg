@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -9,11 +9,13 @@ import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 export class FilterComponent implements OnInit {
   public filter1:filter;
+  chambers:string[]=['lower','upper']
+
 
 
 
 @Output() 
-notify: EventEmitter<string> = new EventEmitter<string>();
+notify= new EventEmitter<string>();
 
   constructor(
     
@@ -24,16 +26,22 @@ chamber:'boston',
 state:'ma',
 type:'gh'
 }
+
   
   }
   
   sendFilter(){
-    console.log(this.filter1.subject)
+    //console.log(this.filter1.subject)
      //this.notify.emit(parseInt(this.num1) + parseInt());
-     this.notify.emit(this.filter1.subject);
+     
+     let fstr:string="&state="+this.filter1.state+"&chamer="+this.filter1.chamber+"&subject="+this.filter1.subject;
+     this.notify.emit(fstr);
   }
 
   ngOnInit() {
   }
 
+  onSelectionChangechamber(chamber:string){
+    console.log(chamber);
+  }
 }
