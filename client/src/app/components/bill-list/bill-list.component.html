@@ -4,13 +4,13 @@
 <label>Bill Number: {{bill.Id}}</label><br>
 <p>Comment: {{bill.body}}</p><br>
 </div> -->   
+<md-card> Filter Card
 <button (click)="toggleFilter()" class="btn btn-success">Filter Bills</button>
 <div *ngIf="isFilter"> 
 <app-filter  (notify)="filterBillsList($event)" #flt ></app-filter> 
 </div>
-<div  >
-<button (notify)="filterBillsList($event)" class="btn btn-success">get the filter Bills</button>
-
+</md-card>
+<div>
 <div *ngFor="let bill of bills">
 <md-card class="example-card">
   <md-card-header>
