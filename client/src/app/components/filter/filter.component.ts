@@ -34,7 +34,9 @@ type:'gh'
     //console.log(this.filter1.subject)
      //this.notify.emit(parseInt(this.num1) + parseInt());
      
-     let fstr:string="&state="+this.filter1.state+"&chamer="+this.filter1.chamber+"&subject="+this.filter1.subject;
+     //let fstr:string="&state="+this.filter1.state+"&chamer="+this.filter1.chamber+"&subject="+this.filter1.subject;
+     let fstr:string="&state="+this.filter1.state
+
      this.notify.emit(fstr);
   }
 
