@@ -5,8 +5,12 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
+var ImportantConfig = require('../src/assets/config.js');
 
-const MONGODB_URI = 'mongodb://<username>:<password>@ds135963.mlab.com:35963/idleg';
+
+
+const MONGODB_URI = 'mongodb://' + ImportantConfig.dbUser + ':' + ImportantConfig.dbPass + '@ds135963.mlab.com:35963/idleg';
+console.log('mongoURI: ',MONGODB_URI);
 
 /**
  * TODO: We're going to define paths below
