@@ -20,11 +20,11 @@ addComment(event){
     comment:this.commentStr,
     userId:"just dummy user"
  }
-  console.log(newComment);
+ 
  this.ws.addComment(newComment)
       .subscribe( data =>{
          // this.tasks.push(task);
-         console.log(data)
+         console.log("sub data",data)
           this.commentStr='';
       });
 } 

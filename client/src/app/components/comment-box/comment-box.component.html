@@ -1,10 +1,10 @@
  
     <h1>hsd</h1>
-    <form (submit)="addComment($event)">
+    <form (ngSubmit)="addComment($event)">
         <div>
             <label for="comment">Comments</label><br>
             <input type="text" [(ngModel)]=commentStr name=commentStr  class="btn btn-success" >
-            <!-- <button type="submit" class="">Submit</button> -->
+            <button type="submit" class="">Submit</button> 
         </div>
     </form>
     <!--<button md-button>LIKE</button>
