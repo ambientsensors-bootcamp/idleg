@@ -1,16 +1,16 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
-/out-tsc
+**/dist
+**/tmp
+**/out-tsc
 
 # dependencies
-/node_modules
+**/node_modules
 
 #configs
-/src/assets/config.ts
-/src/assets/config.js
+**/src/assets/config.ts
+**/src/assets/config.js
 
 # IDEs and editors
 /.idea
@@ -33,7 +33,7 @@
 /connect.lock
 /coverage
 /libpeerconnection.log
-npm-debug.log
+**/npm-debug.log
 testem.log
 /typings
 
@@ -42,5 +42,5 @@ testem.log
 /e2e/*.map
 
 # System Files
-.DS_Store
-Thumbs.db
+**/.DS_Store
+**/Thumbs.db
