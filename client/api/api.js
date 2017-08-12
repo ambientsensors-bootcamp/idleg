@@ -8,8 +8,9 @@ var MongoClient = require('mongodb').MongoClient;
 //var ImportantConfig = require('../src/assets/config.js');
 
 
-
 const MONGODB_URI = 'mongodb://<username>:<password>@ds135963.mlab.com:35963/idleg';
+
+
 
 //const MONGODB_URI = 'mongodb://' + ImportantConfig.dbUser + ':' + ImportantConfig.dbPass + '@ds135963.mlab.com:35963/idleg';
 console.log('mongoURI: ',MONGODB_URI);
