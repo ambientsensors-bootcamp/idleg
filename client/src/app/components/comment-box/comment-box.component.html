@@ -1,3 +1,12 @@
-<p>
-  comment-box works!
-</p>
+ 
+    <h1>hsd</h1>
+    <form (submit)="addComment($event)">
+        <div>
+            <label for="comment">Comments</label><br>
+            <input type="text" [(ngModel)]=commentStr name=commentStr  class="btn btn-success" >
+            <!-- <button type="submit" class="">Submit</button> -->
+        </div>
+    </form>
+    <!--<button md-button>LIKE</button>
+    <button md-button>SHARE</button>-->
+ 

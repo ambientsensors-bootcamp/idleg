@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebService } from '../../services/web.service';
 
 @Component({
   selector: 'app-comment-box',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment-box.component.css']
 })
 export class CommentBoxComponent implements OnInit {
-
-  constructor() { }
+commentStr:string;
+  constructor(private ws:WebService) { }
 
   ngOnInit() {
   }
+
+addComment(event){
+  //event.preventDefault()//so it denote actually submit
+ var newComment={
+    billId:"just dummy bill for now",
+    comment:this.commentStr,
+    userId:"just dummy user"
+ }
+  console.log(newComment);
+ this.ws.addComment(newComment)
+      .subscribe( data =>{
+         // this.tasks.push(task);
+         console.log(data)
+          this.commentStr='';
+      });
+} 
 
 }

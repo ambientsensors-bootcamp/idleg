@@ -1,5 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
 import { Observable, Subject } from 'rxjs/Rx';
 import * as _ from 'lodash';
 //npm install --save lodash
@@ -49,4 +50,15 @@ constructor(private http: Http, private config: ImportantConfig) {}
         let message = `Received ${err.status} from the server`;
         return Observable.throw({ message: message, status });
     }
+
+  public addComment(newComment){
+  var headers=new Headers();
+   console.log(newComment);
+  headers.append('content-Type','application/json');
+  let options = new RequestOptions({ headers: headers });
+  return this.http.post('http://localhost:3000/api/saveComment',JSON.stringify(newComment),options)
+  .map(res=> res.json());
+
+}
+
 }

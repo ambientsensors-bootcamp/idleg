@@ -5,11 +5,13 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
-var ImportantConfig = require('../src/assets/config.js');
+//var ImportantConfig = require('../src/assets/config.js');
 
 
 
-const MONGODB_URI = 'mongodb://' + ImportantConfig.dbUser + ':' + ImportantConfig.dbPass + '@ds135963.mlab.com:35963/idleg';
+const MONGODB_URI = 'mongodb://<username>:<password>@ds135963.mlab.com:35963/idleg';
+
+//const MONGODB_URI = 'mongodb://' + ImportantConfig.dbUser + ':' + ImportantConfig.dbPass + '@ds135963.mlab.com:35963/idleg';
 console.log('mongoURI: ',MONGODB_URI);
 
 /**
@@ -35,10 +37,10 @@ router.get('/about', function (req, res, next) {
  * http://localhost:3000/api/find
  */
 router.get('/find', function (req, res, next) {
-  MongoClient.connect(MONGODB_URI, function (err, db) {
+  MongoClient.connect(MONGODB_URI2, function (err, db) {
     if (err) throw err
 
-    db.collection('User').find().toArray(function (err, result) {
+    db.collection('bills').find().toArray(function (err, result) {
       if (err) throw err
 
       console.log(result);
@@ -48,7 +50,21 @@ router.get('/find', function (req, res, next) {
 
 });
 
+router.post('/saveComment',function(req,res,next){
+  var item=req.body
+  console.log(item)
+  MongoClient.connect(MONGODB_URI2,function(err,db){
+    if (err) throw err
+    db.collection('userComments').insertOne(item,function(err,result){
+      if (err) throw err
+      console.log('inserted successfully');
+      db.close();
+      res.send(item);
+    })
 
+  })
+
+});
 
 /**
  * And now let's export our router

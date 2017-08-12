@@ -24,17 +24,10 @@
     </p>
   </md-card-content>
   <md-card-actions>
-      <form (submit)="addComment(comment.value)">
-        <div>
-            <label for="comment">Comments</label><br>
-            <input type="text" #comment><br>
-            <button type="submit" class="btn btn-success">Submit</button>
-        </div>
-    </form>
+      <app-comment-box></app-comment-box> 
     <!--<button md-button>LIKE</button>
     <button md-button>SHARE</button>-->
   </md-card-actions> 
 </md-card>
- 
 </div>
 </div>
