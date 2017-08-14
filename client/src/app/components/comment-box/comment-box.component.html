@@ -1,12 +1,22 @@
  
-    <h1>hsd</h1>
+<md-card>
+    <button (click)="showAddComment()" class="btn btn-success">Add Comment </button>
+    <button (click)="showViewComments()" class="btn btn-success">View Comments </button>
+
+
+   <div *ngIf="isAdd">
     <form >
         <div>
             <label for="comment">Comments</label><br>
-            <input type="text" [(ngModel)]=commentStr name=commentStr  class="btn btn-success" >
+            <input type="text" class="input" [(ngModel)]=commentStr name=commentStr  class="btn btn-success" >><br>
             <button type="submit" (click)="addComment($event)" class="">Submit</button> 
         </div>
     </form>
+   </div>
+    <div *ngIf="isView">
+        
+    </div>
+</md-card>
     <!--<button md-button>LIKE</button>
     <button md-button>SHARE</button>-->
  

@@ -10,6 +10,7 @@ var ImportantConfig = require('../src/assets/config.js');
 //const MONGODB_URI = 'mongodb://idleg:dMjy$8AuG3V7n@ds135963.mlab.com:35963/idleg';
 
 const MONGODB_URI = 'mongodb://' + ImportantConfig.dbUser + ':' + ImportantConfig.dbPass + '@ds135963.mlab.com:35963/idleg';
+
 console.log('mongoURI: ',MONGODB_URI);
 
 /**
@@ -38,7 +39,7 @@ router.get('/find', function (req, res, next) {
   MongoClient.connect(MONGODB_URI2, function (err, db) {
     if (err) throw err
 
-    db.collection('bills').find().toArray(function (err, result) {
+    db.collection('userComments').find().toArray(function (err, result) {
       if (err) throw err
 
       console.log(result);
