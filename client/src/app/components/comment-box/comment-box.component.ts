@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import { WebService } from '../../services/web.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { WebService } from '../../services/web.service';
 })
 export class CommentBoxComponent implements OnInit {
 commentStr:string;
+@Input() billId:string;
+
   constructor(private ws:WebService) { }
 
   ngOnInit() {
@@ -16,11 +18,11 @@ commentStr:string;
 addComment(event){
   //event.preventDefault()//so it denote actually submit
  var newComment={
-    billId:"just dummy bill for now",
+    billId:this.billId,
     comment:this.commentStr,
     userId:"just dummy user"
  }
- 
+
  this.ws.addComment(newComment)
       .subscribe( data =>{
          // this.tasks.push(task);
