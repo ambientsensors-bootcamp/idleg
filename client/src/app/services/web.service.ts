@@ -11,15 +11,21 @@ import { ImportantConfig } from '../../assets/config';
 export class WebService {
     private errorsSubject = new Subject<any>();
     //public baseURL: string = "https://openstates.org/api/v1/bills/?apikey=" 
-    public baseURL: string = "https://openstates.org/api/v1/" 
-    
-constructor(private http: Http, private config: ImportantConfig) {}
+    public baseURL: string = "https://openstates.org/api/v1/"
+
+    constructor(private http: Http, private config: ImportantConfig) { }
 
 
 
-    public getResource(resource: string): Observable<any> {
+    public getResource(resource: string, urlOption): Observable<any> {
         console.log("Important API KEY is: " + this.config.API_KEY);
-        let fullPath = this.baseURL + resource + "&apikey=" + this.config.API_KEY ;
+        var fullPath = "";
+        if (urlOption == 1) {
+            fullPath = this.baseURL + resource + "&apikey=" + this.config.API_KEY;
+        } else {
+            fullPath = resource;
+        }
+
         console.log("GET request to full path: " + fullPath);
         const response = this.http.get(fullPath);
         return this.getResponseBody(response);
@@ -51,14 +57,14 @@ constructor(private http: Http, private config: ImportantConfig) {}
         return Observable.throw({ message: message, status });
     }
 
-  public addComment(newComment){
-  var headers=new Headers();
-   console.log(newComment);
-  headers.append('content-Type','application/json');
-  let options = new RequestOptions({ headers: headers });
-  return this.http.post('http://localhost:3000/api/saveComment',JSON.stringify(newComment),options)
-  .map(res=> res.json());
+    public addComment(newComment) {
+        var headers = new Headers();
+        console.log(newComment);
+        headers.append('content-Type', 'application/json');
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post('http://localhost:3000/api/saveComment', JSON.stringify(newComment), options)
+            .map(res => res.json());
 
-}
+    }
 
 }

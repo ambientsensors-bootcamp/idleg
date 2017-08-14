@@ -10,6 +10,8 @@ export class CommentBoxComponent implements OnInit {
   commentStr: string;
   isAdd: boolean;
   isView: boolean;
+  comments: Comment[];
+
   @Input() billId: string;
 
   constructor(private ws: WebService) { }
@@ -41,6 +43,20 @@ export class CommentBoxComponent implements OnInit {
   showViewComments() {
     this.isView = !this.isView;
     this.isAdd = false;
-  }
+    if (this.isView) {
 
+      this.ws.getResource("http://localhost:3000/api/find", 2).subscribe(data => {
+        this.comments = data;
+        console.log("recieved comments", this.comments);
+
+      });
+    }
+
+  }
+}
+
+interface Comment {
+  billId: string,
+  comment: string,
+  userId: string
 }

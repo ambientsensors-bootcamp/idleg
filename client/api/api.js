@@ -44,6 +44,7 @@ router.get('/find', function (req, res, next) {
 
       console.log(result);
       res.send(result);
+      //res.json(result);
     })
   })
 
