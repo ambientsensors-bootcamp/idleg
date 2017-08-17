@@ -11,6 +11,7 @@ var ImportantConfig = require('../src/assets/config.js');
 
 const MONGODB_URI = 'mongodb://' + ImportantConfig.dbUser + ':' + ImportantConfig.dbPass + '@ds135963.mlab.com:35963/idleg';
 
+
 console.log('mongoURI: ',MONGODB_URI);
 
 /**
@@ -49,6 +50,23 @@ router.get('/find', function (req, res, next) {
   })
 
 });
+
+router.get('/find/:billId', function (req, res, next) {
+  var param=req.params.billId
+  MongoClient.connect(MONGODB_URI2, function (err, db) {
+    if (err) throw err
+    req.params
+    db.collection('userComments').find({'billId':param}).toArray(function (err, result) {
+      if (err) throw err
+
+      console.log(result);
+      res.send(result);
+      //res.json(result);
+    })
+  })
+
+});
+
 
 router.post('/saveComment',function(req,res,next){
   var item=req.body
