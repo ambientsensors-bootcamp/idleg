@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<md-toolbar >
+    <!-- <span> IdLeg Bill viewer</span> -->
+<button md-button [mdMenuTriggerFor]="mMenu">Main Menu</button>
+  <md-menu #mMenu="mdMenu">
+    <button md-menu-item routerLink="/about">About</button>
+    <button md-menu-item routerLink="/bills">Bills</button>
+  </md-menu>
+</md-toolbar>
+<md-card></md-card>
+<router-outlet></router-outlet> 
+  <!-- <ul>
+   <li><a routerLink="/bills" > Bills </a></li> 
+   <li><a routerLink="/about" > About </a></li>
+</ul>
+  <button md-button routerLink="about">About</button> -->

@@ -1,0 +1,30 @@
+<md-card>
+    <!-- <button (click)="showAddComment()" class="btn btn-success">Add Comment </button>
+    <button (click)="showViewComments()" class="btn btn-success">View Comments </button> -->
+    <md-button-toggle-group #group="mdButtonToggleGroup">
+        <md-button-toggle value="1">
+            Add Comment
+        </md-button-toggle>
+        <md-button-toggle value="2" (click)="showViewComments()">
+            <!-- <md-icon>format_align_left</md-icon> -->
+            View Comments
+        </md-button-toggle>
+    </md-button-toggle-group>
+
+    <div *ngIf="group.value == 1">
+        <form>
+            <div>
+                <label for="comment">Comments</label><br>
+                <input type="text" class="input" [(ngModel)]=commentStr name=commentStr class="btn btn-success"><br>
+                <button type="submit" (click)="addComment($event)" class="">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="group.value == 2">
+        <div *ngFor="let com of comments">
+            {{com.comment}}
+        </div>
+    </div>
+</md-card>
+<!--<button md-button>LIKE</button>
+    <button md-button>SHARE</button>-->
