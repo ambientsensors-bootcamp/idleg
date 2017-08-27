@@ -52,7 +52,10 @@ const appRoutes:Routes=[
     FormsModule
     
   ],
-  providers: [WebService,ImportantConfig],
+  providers: [
+    WebService,
+    ImportantConfig
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
