@@ -11,6 +11,10 @@
 </div>
 </md-card>
 <div>
+
+<md-paginator [length]="length" [pageSize]="pageSize" (page)="onmypage( $event)"   [pageSizeOptions]="[5, 10, 25, 100]" >
+  </md-paginator>
+<h4>testpage mMM: {{testpage}}</h4>
 <div *ngFor="let bill of bills">
 <md-card class="example-card">
   <md-card-header>

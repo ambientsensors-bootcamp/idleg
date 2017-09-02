@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { WebService } from '../../services/web.service';
+
+import {PageEvent} from '@angular/material';
+
+
+
 //import { FilterComponent } from '../filter/filter.component';
 
 @Component({
@@ -9,11 +14,23 @@ import { WebService } from '../../services/web.service';
 })
 export class BillListComponent implements OnInit {
   
+onmypage($event){
+    this.pageEvent=$event
+ console.log(this.testpage)
+  this.testpage=this.pageEvent.pageIndex;;
+  }
+
   bills:Bill[];
   //baseUrl="bills/?state=id&search_window=session&page=1&per_page=20";
  
   isFilter:boolean=false;
   
+
+pageEvent: PageEvent;  
+  length:number=200;
+  pageSize:number=10;
+  testpage=5;
+
   /* submitted = false;
   onSu bmit() { this.submitted = true; }*/
 
