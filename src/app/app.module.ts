@@ -24,7 +24,7 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
 
 
 const appRoutes:Routes=[
-  {path:'',component:AppComponent},
+  {path:'',redirectTo: 'bills',pathMatch: 'full'},
   {path:'about',component:AboutComponent},
   {path:'bills',component:BillsComponent}
 
