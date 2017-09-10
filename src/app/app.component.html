@@ -1,15 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 
-<md-toolbar >
-    <!-- <span> IdLeg Bill viewer</span> -->
+<md-chip-list>
+  <!-- <md-chip>One fish</md-chip>
+  <md-chip>Two fish</md-chip> -->
+  
+  <md-chip id="chip-list"routerLink="/bills"color="accent" selected="true">Bill</md-chip>
+  <md-chip routerLink="/about"color="primary" selected="true">About</md-chip>
+</md-chip-list>
+
+
+
+<!-- <md-toolbar >
+     <span> IdLeg Bill viewer</span> 
 <button md-button [mdMenuTriggerFor]="mMenu">Main Menu</button>
   <md-menu #mMenu="mdMenu">
     <button md-menu-item routerLink="/about">About</button>
     <button md-menu-item routerLink="/bills">Bills</button>
   </md-menu>
-</md-toolbar>
-<md-card></md-card>
+</md-toolbar> -->
+<!-- <md-card></md-card> -->
 <router-outlet></router-outlet> 
   <!-- <ul>
    <li><a routerLink="/bills" > Bills </a></li> 
