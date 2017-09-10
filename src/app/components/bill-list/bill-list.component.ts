@@ -40,7 +40,7 @@ pageEvent: PageEvent;
 
   ngOnInit() {
     
-    this.ws.getResource("bills/?state=id&search_window=session&page=1&per_page=20",1).subscribe(data => {
+    this.ws.getResource("bills/?state=id&search_window=session&updated_since=2017-03-01",1).subscribe(data => {
       this.bills = data;
       console.log("data", this.bills); 
 
@@ -54,7 +54,7 @@ pageEvent: PageEvent;
    }
 
    filterBillsList(filterStr){
-  console.log(filterStr)
+  console.log('filterStr: ',filterStr)
   this.bills=[]
   let url="bills/?search_window=session&page=1&per_page=20"+filterStr;
   this.ws.getResource(url,1).subscribe(data => {
