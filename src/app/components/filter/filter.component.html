@@ -19,7 +19,9 @@
             {{chambers[i]}}
             </div>
             <label for="topic">Type : </label>
+            <label for="tpic">Year : </label>
             <input type="text" [(ngModel)]="filter1.type" name=type><br>
+            <input type="text" [(ngModel)]="filter1.year" name=year><br>
             <button (click)="sendFilter()" class="btn btn-success">Filter </button>
           
    </div>

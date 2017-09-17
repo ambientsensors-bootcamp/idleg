@@ -3,6 +3,7 @@
     subject:string,
     chamber:string,
     state:string,
-    type:string
+    type:string,
+    year:string
       
 }

@@ -24,10 +24,9 @@ export class FilterComponent implements OnInit {
       subject: '50 state',
       chamber: 'boston',
       state: 'ma',
-      type: 'gh'
+      type: 'gh',
+      year: '2017'
     }
-
-
   }
 
   sendFilter() {
@@ -35,7 +34,7 @@ export class FilterComponent implements OnInit {
     //this.notify.emit(parseInt(this.num1) + parseInt());
 
     //let fstr:string="&state="+this.filter1.state+"&chamer="+this.filter1.chamber+"&subject="+this.filter1.subject;
-    let fstr: string = "&state=" + this.filter1.state
+    let fstr: string = "?state=" + this.filter1.state + "&search_window=session:" + this.filter1.year + "&page=1&per_page=20"
 
     this.notify.emit(fstr);
   }

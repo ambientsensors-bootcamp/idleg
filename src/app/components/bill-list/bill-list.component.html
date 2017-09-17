@@ -1,37 +1,35 @@
-<h1> Bills</h1>
-<!--   
-<div *ngFor="let bill of bills">
-<label>Bill Number: {{bill.Id}}</label><br>
-<p>Comment: {{bill.body}}</p><br>
-</div> -->   
-<md-card> Filter Card
-<button (click)="toggleFilter()" class="btn btn-success">Filter Bills</button>
-<div *ngIf="isFilter"> 
-<app-filter  (notify)="filterBillsList($event)" #flt ></app-filter> 
-</div>
-</md-card>
-<div>
+<md-sidenav-container fxFlex> <!-- takes rest of screen height -->
+  <md-sidenav mode="side" align="start" opened class="mat-elevation-z6">
+    <md-card> Filter Cards
+    <button (click)="toggleFilter()" class="btn btn-success">Filter Bills</button>
+    <div *ngIf="isFilter">
+    <app-filter (notify)="filterBillsList($event)" #flt ></app-filter> 
+    </div>
+    </md-card>
+  </md-sidenav>
+  <!--
+  <div>
+    <md-paginator [length]="length" [pageSize]="pageSize" (page)="onmypage( $event)"   [pageSizeOptions]="[5, 10, 25, 100]" >
+      </md-paginator>
+    <h4>testpage mMM: {{testpage}}</h4>
+  </div> -->
 
-<md-paginator [length]="length" [pageSize]="pageSize" (page)="onmypage( $event)"   [pageSizeOptions]="[5, 10, 25, 100]" >
-  </md-paginator>
-<h4>testpage mMM: {{testpage}}</h4>
-<div *ngFor="let bill of bills">
-<md-card class="example-card">
-  <md-card-header>
-    <md-card-title>Bill Number: {{bill.bill_id}}</md-card-title>
-    <md-card-subtitle>Subject: {{bill.subjects[0]}}</md-card-subtitle> 
-  </md-card-header>
-  <!-- <img md-card-image src="assets/img/examples/shiba2.jpg"> -->
-  <md-card-content>
-    <p>
-     Bill Description: {{bill.title}}
-    </p>
-  </md-card-content>
-  <md-card-actions>
-      <app-comment-box [billId]='bill.bill_id'></app-comment-box> 
-    <!--<button md-button>LIKE</button>
-    <button md-button>SHARE</button>-->
-  </md-card-actions> 
-</md-card>
-</div>
-</div>
+  <md-grid-list cols="4" rowHeight="400px">
+    <md-grid-tile *ngFor="let bill of bills">
+      <section class="flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+      <md-card>
+        <md-card-title>Bill Number: {{bill.bill_id}}
+        <span md-line>Subject: {{bill.subjects[0]}}</span></md-card-title>
+      <md-card-content>
+          <p>
+          {{bill.title}}
+          </p>
+        <div class="md-actions" layout="row" layout-align="end center">
+          <app-comment-box [billId]='bill.bill_id'></app-comment-box> 
+        </div>
+      </md-card-content>
+      </md-card>
+      </section>
+    </md-grid-tile>
+  </md-grid-list>
+</md-sidenav-container>
