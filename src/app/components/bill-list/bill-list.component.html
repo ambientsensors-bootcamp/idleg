@@ -14,10 +14,12 @@
     <h4>testpage mMM: {{testpage}}</h4>
   </div> 
  -->
-<pagination-controls (pageChange)="p=$event"></pagination-controls>
 
+ <div>
+<pagination-controls (pageChange)="page=$event"></pagination-controls>
+</div>
   <md-grid-list cols="4" rowHeight="400px">
-    <md-grid-tile *ngFor="let bill of bills | paginate: {itemsPerPage:itemsPPage, currentPage:p}">
+    <md-grid-tile *ngFor="let bill of bills | paginate: {itemsPerPage:itemsPPage, currentPage:page}">
       <section class="flex-container" fxLayout="column" fxLayoutAlign="start stretch">
       <md-card>
         <md-card-title>Bill Number: {{bill.bill_id}}
