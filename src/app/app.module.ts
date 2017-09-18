@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 //import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import { MaterialModule } from '@angular/material';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
@@ -46,6 +47,7 @@ const appRoutes:Routes=[
     ],
 
   imports: [
+    NgxPaginationModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     MaterialModule,

@@ -4,7 +4,7 @@ import { PageEvent } from '@angular/material';
 
 // Add Material Design and Angular Flex Layout
 import { MaterialModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
+//import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 //import { FilterComponent } from '../filter/filter.component';
@@ -16,23 +16,31 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 })
 export class BillListComponent implements OnInit {
   
-onmypage($event){
+/*onmypage($event){
     this.pageEvent=$event
  console.log(this.testpage)
   this.testpage=this.pageEvent.pageIndex;;
-  }
+  }*/
 
   bills:Bill[];
+  sbills:Bill[];
   //baseUrl="bills/?state=id&search_window=session&page=1&per_page=20";
  
   isFilter:boolean=false;
   
 
 pageEvent: PageEvent;  
-  length:number=200;
-  pageSize:number=10;
-  testpage=5;
-
+  
+  page:number=1;
+  itemsPPage:number=20;
+  
+/*  testpage=5;
+  onmypage($event){
+    this.pageEvent=$event
+ console.log(this.testpage)
+  this.testpage=this.pageEvent.pageIndex;;
+  }
+ */
   /* submitted = false;
   onSu bmit() { this.submitted = true; }*/
 
@@ -41,9 +49,11 @@ pageEvent: PageEvent;
   }
 
   ngOnInit() {
+   // "bills/?state=id&search_window=session&updated_since=2017-03-01&page=1&per_page=20"
     
-    this.ws.getResource("bills/?state=id&search_window=session&updated_since=2017-03-01&page=1&per_page=20",1).subscribe(data => {
+    this.ws.getResource("bills/?state=id&search_window=session&updated_since=2017-03-01",1).subscribe(data => {
       this.bills = data;
+      //this.bills=this.sbills.slice(10);
       console.log("data", this.bills); 
 
 });
@@ -55,6 +65,10 @@ pageEvent: PageEvent;
     this.isFilter=! this.isFilter ;
    }
 
+     
+
+
+
    filterBillsList(filterStr){
   console.log('filterStr: ',filterStr)
   this.bills=[]
@@ -65,6 +79,8 @@ pageEvent: PageEvent;
       });
 }
   
+
+
   }
 
 

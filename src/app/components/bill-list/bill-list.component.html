@@ -7,15 +7,17 @@
     </div>
     </md-card>
   </md-sidenav>
-  <!--
-  <div>
+  
+ <!--  <div>
     <md-paginator [length]="length" [pageSize]="pageSize" (page)="onmypage( $event)"   [pageSizeOptions]="[5, 10, 25, 100]" >
       </md-paginator>
     <h4>testpage mMM: {{testpage}}</h4>
-  </div> -->
+  </div> 
+ -->
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
 
   <md-grid-list cols="4" rowHeight="400px">
-    <md-grid-tile *ngFor="let bill of bills">
+    <md-grid-tile *ngFor="let bill of bills | paginate: {itemsPerPage:itemsPPage, currentPage:p}">
       <section class="flex-container" fxLayout="column" fxLayoutAlign="start stretch">
       <md-card>
         <md-card-title>Bill Number: {{bill.bill_id}}
