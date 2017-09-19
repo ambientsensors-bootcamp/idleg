@@ -1,26 +1,29 @@
-
 <div>
-    <label for="topic">Chamber : </label>
+     <label for="state">State : </label>
+    <md-select placeholder="state" [(ngModel)]="filter1.state" name="state">
+        <md-option *ngFor="let state of states" [value]="state.value">
+            {{state.viewValue}}
+        </md-option>
+    </md-select> <br><br>
+
+    <label for="chamber">Chamber : </label>
     <md-radio-group [(ngModel)]="filter1.chamber">
         <md-radio-button *ngFor="let item of chambers" [value]="item">
             {{item}}
         </md-radio-button>
-    </md-radio-group><br>
+    </md-radio-group><br><br>
 
     <label for="topic">Topic : </label>
-    <input type="text" [(ngModel)]="filter1.subject" name=subject><br>
-    <label for="topic">State : </label>
-    <input type="text" [(ngModel)]="filter1.state" name=state><br>
-    <label for="topic">Chamber : </label>
-    <input type="text" [(ngModel)]="filter1.chamber" name=chamber><br>
-    
+    <input type="text" [(ngModel)]="filter1.subject" name=subject><br><br>
+
+
     <!-- <div *ngFor="let chamber of chambers ; let i=index">
         <input type="radio" name="chambergroup" [checked]="idx === 0" [value]="chamber" [id]="chamber" (change)="onSelectionChangechamber(chamber)">        {{chambers[i]}}
     </div> -->
-    <label for="topic">Type : </label>
-    <input type="text" [(ngModel)]="filter1.type" name=type><br>
-    <label for="tpic">Year : </label>
-    <input type="text" [(ngModel)]="filter1.year" name=year><br>
+    <label for="type">Type : </label>
+    <input type="text" [(ngModel)]="filter1.type" name=type><br><br>
+    <label for="year">Year : </label>
+    <input type="text" [(ngModel)]="filter1.year" name=year><br><br>
     <button (click)="sendFilter()" class="btn btn-success">Filter </button>
 
 </div>
