@@ -1,6 +1,6 @@
 <div>
      <label for="state">State : </label>
-    <md-select placeholder="state" [(ngModel)]="filter1.state" name="state">
+    <md-select  [(ngModel)]="filter1.state" name="state">
         <md-option *ngFor="let state of states" [value]="state.value">
             {{state.viewValue}}
         </md-option>

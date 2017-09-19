@@ -256,13 +256,14 @@ export class FilterComponent implements OnInit {
   constructor(
 
   ) {
-     this.filter1 = {
-      subject: '50 state',
-      chamber: 'boston',
-      state: 'ma',
-      type: 'gh',
-      year: '2017'
-    } 
+      this.filter1 = {
+      subject: '',
+      chamber: '',
+      state: 'ID',
+      type: '',
+      year: ''
+    }  
+   // this.filter1={}''
   }
 
   sendFilter() {
@@ -270,7 +271,7 @@ export class FilterComponent implements OnInit {
     //this.notify.emit(parseInt(this.num1) + parseInt());
 
     //let fstr:string="&state="+this.filter1.state+"&chamer="+this.filter1.chamber+"&subject="+this.filter1.subject;
-    let fstr: string = "?state=" + this.filter1.state + "&chamber=" + this.filter1.chamber + "&search_window=session:" + this.filter1.year
+    let fstr: string = "?state=" + this.filter1.state + "&chamber=" + this.filter1.chamber + "&search_window=session" 
     console.log("chamber=" + this.filter1.chamber)
     this.notify.emit(fstr);
   }
