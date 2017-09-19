@@ -271,7 +271,11 @@ export class FilterComponent implements OnInit {
     //this.notify.emit(parseInt(this.num1) + parseInt());
 
     //let fstr:string="&state="+this.filter1.state+"&chamer="+this.filter1.chamber+"&subject="+this.filter1.subject;
-    let fstr: string = "?state=" + this.filter1.state + "&chamber=" + this.filter1.chamber + "&search_window=session" 
+    let fstr: string = "?state=" + this.filter1.state + "&chamber=" + this.filter1.chamber+ "&search_window=session" 
+    if (this.filter1.subject) {
+      fstr=fstr+"&subject=" + this.filter1.subject 
+      
+    }
     console.log("chamber=" + this.filter1.chamber)
     this.notify.emit(fstr);
   }
