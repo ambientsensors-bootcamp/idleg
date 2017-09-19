@@ -9,7 +9,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export class FilterComponent implements OnInit {
   public filter1: filter;
-  chambers: string[] = ['lower', 'upper']
+  chambers: string[]= ["lower", "upper"]
+  //selectedChamber:string;
 
 
 
@@ -34,8 +35,8 @@ export class FilterComponent implements OnInit {
     //this.notify.emit(parseInt(this.num1) + parseInt());
 
     //let fstr:string="&state="+this.filter1.state+"&chamer="+this.filter1.chamber+"&subject="+this.filter1.subject;
-    let fstr: string = "?state=" + this.filter1.state + "&search_window=session:" + this.filter1.year + "&page=1&per_page=20"
-
+    let fstr: string = "?state=" + this.filter1.state + "&chamber="+this.filter1.chamber +"&search_window=session:" + this.filter1.year 
+    console.log("chamber="+this.filter1.chamber)
     this.notify.emit(fstr);
   }
 

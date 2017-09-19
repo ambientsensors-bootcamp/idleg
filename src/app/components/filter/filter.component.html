@@ -1,23 +1,26 @@
+
 <div>
- 
-            <label for="topic">Topic : </label>
-            <input type="text" [(ngModel)]="filter1.subject" name=subject><br>
-            <label for="topic">State : </label>
-            <input type="text" [(ngModel)]="filter1.state" name=state><br>
-            <label for="topic">Chamber : </label>
-            <input type="text" [(ngModel)]="filter1.chamber" name=chamber><br>
-            <div *ngFor="let chamber of chambers ; let i=index">
-            <input type="radio" name="chambergroup" 
-            [checked]="idx === 0" 
-            [value]="chamber" 
-            [id]="chamber"
-            (change)="onSelectionChangechamber(chamber)">
-            {{chambers[i]}}
-            </div>
-            <label for="topic">Type : </label>
-            <label for="tpic">Year : </label>
-            <input type="text" [(ngModel)]="filter1.type" name=type><br>
-            <input type="text" [(ngModel)]="filter1.year" name=year><br>
-            <button (click)="sendFilter()" class="btn btn-success">Filter </button>
-          
-   </div>
+    <label for="topic">Chamber : </label>
+    <md-radio-group [(ngModel)]="filter1.chamber">
+        <md-radio-button *ngFor="let item of chambers" [value]="item">
+            {{item}}
+        </md-radio-button>
+    </md-radio-group><br>
+
+    <label for="topic">Topic : </label>
+    <input type="text" [(ngModel)]="filter1.subject" name=subject><br>
+    <label for="topic">State : </label>
+    <input type="text" [(ngModel)]="filter1.state" name=state><br>
+    <label for="topic">Chamber : </label>
+    <input type="text" [(ngModel)]="filter1.chamber" name=chamber><br>
+    
+    <!-- <div *ngFor="let chamber of chambers ; let i=index">
+        <input type="radio" name="chambergroup" [checked]="idx === 0" [value]="chamber" [id]="chamber" (change)="onSelectionChangechamber(chamber)">        {{chambers[i]}}
+    </div> -->
+    <label for="topic">Type : </label>
+    <input type="text" [(ngModel)]="filter1.type" name=type><br>
+    <label for="tpic">Year : </label>
+    <input type="text" [(ngModel)]="filter1.year" name=year><br>
+    <button (click)="sendFilter()" class="btn btn-success">Filter </button>
+
+</div>
