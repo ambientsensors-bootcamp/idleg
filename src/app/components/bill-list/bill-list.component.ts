@@ -23,7 +23,7 @@ export class BillListComponent implements OnInit {
   }*/
 
   bills:Bill[];
-  sbills:Bill[];
+  
   //baseUrl="bills/?state=id&search_window=session&page=1&per_page=20";
  
   isFilter:boolean=false;
@@ -53,7 +53,6 @@ pageEvent: PageEvent;
     
     this.ws.getResource("bills/?state=id&search_window=session&updated_since=2017-03-01",1).subscribe(data => {
       this.bills = data;
-      //this.bills=this.sbills.slice(10);
       console.log("data", this.bills); 
 
 });

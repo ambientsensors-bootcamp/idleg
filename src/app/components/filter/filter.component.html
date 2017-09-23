@@ -23,7 +23,12 @@
     <label for="type">Type : </label>
     <input type="text" [(ngModel)]="filter1.type" name=type><br><br>
     <label for="year">Year : </label>
-    <input type="text" [(ngModel)]="filter1.year" name=year><br><br>
+    <!-- <input type="text" [(ngModel)]="filter1.year" name=year><br><br> -->
+     <md-select  [(ngModel)]="filter1.year" name="year1">
+        <md-option *ngFor="let year of years" [value]="year">
+            {{year}}
+        </md-option>
+    </md-select> <br><br>
     <button (click)="sendFilter()" class="btn btn-success">Filter </button>
 
 </div>

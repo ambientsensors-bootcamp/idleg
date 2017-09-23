@@ -249,6 +249,7 @@ export class FilterComponent implements OnInit {
     }
   ]
 
+  years:string[]=[];
 
   @Output()
   notify = new EventEmitter<string>();
@@ -264,6 +265,14 @@ export class FilterComponent implements OnInit {
       year: ''
     }  
    // this.filter1={}''
+       //or use [] if you want an array
+let min_year :number= 2000;
+let max_year :number= 2017;
+for(let i :number= 0; i <= max_year - min_year; i++) {
+   this.years.push((i + min_year).toString());
+  
+}
+
   }
 
   sendFilter() {
@@ -271,10 +280,14 @@ export class FilterComponent implements OnInit {
     //this.notify.emit(parseInt(this.num1) + parseInt());
 
     //let fstr:string="&state="+this.filter1.state+"&chamer="+this.filter1.chamber+"&subject="+this.filter1.subject;
-    let fstr: string = "?state=" + this.filter1.state + "&chamber=" + this.filter1.chamber+ "&search_window=session" 
-    if (this.filter1.subject) {
+    let fstr: string = "?state=" + this.filter1.state + "&chamber=" + this.filter1.chamber
+    if (this.filter1.subject.trim().length>0) {
       fstr=fstr+"&subject=" + this.filter1.subject 
       
+    }
+    fstr=fstr+"&search_window=session" 
+    if (this.filter1.year.trim().length>0){
+     fstr=fstr+":"+this.filter1.year
     }
     console.log("chamber=" + this.filter1.chamber)
     this.notify.emit(fstr);
