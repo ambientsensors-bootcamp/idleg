@@ -1,8 +1,8 @@
 <md-sidenav-container fxFlex> <!-- takes rest of screen height -->
-  <md-sidenav mode="side" align="start" opened class="mat-elevation-z6">
-    <md-card> Filter Cards
-    <button (click)="toggleFilter()" class="btn btn-success">Filter Bills</button>
-    <div *ngIf="isFilter">
+  <md-sidenav mode="push" align="start" #sidenav opened md-disable-backdrop>
+    <md-card> Bill Filters
+    <!-- <button (click)="toggleFilter()" class="btn btn-success">Filter Bills</button> -->
+    <div> 
     <app-filter (notify)="filterBillsList($event)" #flt ></app-filter> 
     </div>
     </md-card>
@@ -15,7 +15,11 @@
   </div> 
  -->
 
- <div>
+ <div class="example-sidenav-content">
+   <md-chip routerLink="/bills" color="accent" selected="true">
+      <button type="button" md-button (click)="sidenav.open()">
+          <i class="material-icons">filter_list</i> Filter bills
+      </button> </md-chip>
 <pagination-controls (pageChange)="page=$event"></pagination-controls>
 </div>
   <md-grid-list cols="4" rowHeight="400px">

@@ -4,3 +4,10 @@ md-sidenav {
 md-card {
     margin: 12px;
   }
+
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: left;
+    justify-content: left;
+  }
