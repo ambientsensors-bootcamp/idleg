@@ -62,7 +62,7 @@ export class WebService {
         console.log(newComment);
         headers.append('content-Type', 'application/json');
         let options = new RequestOptions({ headers: headers });
-        return this.http.post('http://localhost:3000/api/saveComment', JSON.stringify(newComment), options)
+        return this.http.post('http://localhost:8080/api/saveComment', JSON.stringify(newComment), options)
             .map(res => res.json());
 
     }

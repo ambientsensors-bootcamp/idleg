@@ -7,9 +7,10 @@ var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
 var ImportantConfig = require('../src/assets/config.js');
 
-//const MONGODB_URI = 'mongodb://idleg:dMjy$8AuG3V7n@ds135963.mlab.com:35963/idleg';
+const MONGODB_URI = 'mongodb://idleg:dMjy$8AuG3V7n@ds135963.mlab.com:35963/idleg';
+//const MONGODB_URI = 'mongodb://user2:user2@ds111922.mlab.com:11922/idlegs'
 
-const MONGODB_URI = 'mongodb://' + ImportantConfig.dbUser + ':' + ImportantConfig.dbPass + '@ds135963.mlab.com:35963/idleg';
+//const MONGODB_URI = 'mongodb://' + ImportantConfig.dbUser + ':' + ImportantConfig.dbPass + '@ds135963.mlab.com:35963/idleg';
 
 
 console.log('mongoURI: ',MONGODB_URI);
@@ -37,7 +38,7 @@ router.get('/about', function (req, res, next) {
  * http://localhost:3000/api/find
  */
 router.get('/find', function (req, res, next) {
-  MongoClient.connect(MONGODB_URI2, function (err, db) {
+  MongoClient.connect(MONGODB_URI, function (err, db) {
     if (err) throw err
 
     db.collection('userComments').find().toArray(function (err, result) {
@@ -53,7 +54,7 @@ router.get('/find', function (req, res, next) {
 
 router.get('/find/:billId', function (req, res, next) {
   var param=req.params.billId
-  MongoClient.connect(MONGODB_URI2, function (err, db) {
+  MongoClient.connect(MONGODB_URI, function (err, db) {
     if (err) throw err
     req.params
     db.collection('userComments').find({'billId':param}).toArray(function (err, result) {
@@ -71,7 +72,7 @@ router.get('/find/:billId', function (req, res, next) {
 router.post('/saveComment',function(req,res,next){
   var item=req.body
   console.log(item)
-  MongoClient.connect(MONGODB_URI2,function(err,db){
+  MongoClient.connect(MONGODB_URI,function(err,db){
     if (err) throw err
     db.collection('userComments').insertOne(item,function(err,result){
       if (err) throw err

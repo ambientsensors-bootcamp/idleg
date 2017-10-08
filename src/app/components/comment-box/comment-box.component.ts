@@ -45,7 +45,7 @@ export class CommentBoxComponent implements OnInit {
     //this.isAdd = false;
     //if (this.isView) {
 
-      this.ws.getResource("http://localhost:3000/api/find/"+this.billId, 2).subscribe(data => {
+      this.ws.getResource("http://localhost:8080/api/find/"+this.billId, 2).subscribe(data => {
         this.comments = data;
         console.log("recieved comments", this.comments);
 
