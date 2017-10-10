@@ -26,7 +26,8 @@
     <md-grid-tile *ngFor="let bill of bills | paginate: {itemsPerPage:itemsPPage, currentPage:page}">
       <section class="flex-container" fxLayout="column" fxLayoutAlign="start stretch">
       <md-card>
-        <md-card-title>Bill Number: {{bill.bill_id}}
+        <md-card-title>Bill Number: 
+        <a [routerLink]="['/billDetails', bill.bill_id]">{{bill.bill_id}}</a>
         </md-card-title>
       <md-card-content>
         <md-chip>Subject: {{bill.subjects[0]}}</md-chip>

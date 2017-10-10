@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BillListComponent } from './components/bill-list/bill-list.component';
 import { AboutComponent } from './components/about/about.component';
 import { BillsComponent } from './components/bills/bills.component';
+import { BillDetailsComponent } from './components/bill-details/bill-details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { WebService } from './services/web.service';
 import { ImportantConfig } from '../assets/config';
@@ -24,10 +25,12 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
 
 
 
+
 const appRoutes:Routes=[
   {path:'',redirectTo: 'bill-list',pathMatch: 'full'},
   {path:'about',component:AboutComponent},
-  {path:'bills',component:BillListComponent}
+  {path:'bills',component:BillListComponent},
+  {path:'billDetails/:billID',component:BillDetailsComponent}
 
 ];
 
@@ -43,6 +46,7 @@ const appRoutes:Routes=[
     AboutComponent,
     BillsComponent,
     FilterComponent,
+    BillDetailsComponent,
     
     ],
 
