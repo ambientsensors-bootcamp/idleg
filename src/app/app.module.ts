@@ -30,7 +30,7 @@ const appRoutes:Routes=[
   {path:'',redirectTo: 'bill-list',pathMatch: 'full'},
   {path:'about',component:AboutComponent},
   {path:'bills',component:BillListComponent},
-  {path:'billDetails/:billID',component:BillDetailsComponent}
+  {path:'billDetails/:billId',component:BillDetailsComponent}
 
 ];
 
